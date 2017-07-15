@@ -2,33 +2,11 @@
 # Tweetcode
 
 Tweetcode allows to post code snippets to twitter via Travis CI.
+This is "reference" repository, do not push snippets here.
 
-## Contribution Flow
+## Existing "Tweetcodes"
 
-Follow steps below to "push" some code snippets to Twitter.
-
-### Setup local repo (fist time only)
-
-1. Fork this repo and clone it
-2. Run `git config --local include.path ../.gitconfig`
-
-### Add your snippet
-
-1. Create a new branch based on master
-2. Create new file with code snippet in `snippets` directory:
-   1. Give it meaningful name
-   2. Make sure it's `UTF-8`-encoded file
-3. Commit your changes
-   1. Commit message must follow specific format (template provided)
-4. Run `make` to preview generated tweet
-   1. If there is no errors it'll print generated tweet text and name of
-      generated image
-4. Push your changes
-6. Open Pull Request
-   1. In case of failed CI build - fix locally, squash and push again
-7. After PR is being merged to master, new snippet will be automatically
-   published to twitter
-
+- GolangTweetcode: [twitter](https://twitter.com/GolangSnippets) | [repo](https://github.com/Tweetcode/GolangTweetcode)
 
 ## CI Setup
 
@@ -38,7 +16,7 @@ Follow steps below to setup your own Tweetcode.
    1. Go to github.com and sign in
    2. Click on "+" sign
    3. Select "Import repository"
-   4. Set https://github.com/josephbuchma/tweetcode for "Your old repository’s clone URL" field
+   4. Set https://github.com/Tweetcode/tweetcode for "Your old repository’s clone URL" field
    5. Set name for your repository and click on "Begin import" button.
 2. Clone your newly created repo
 3. Edit `.travis.yml` (provided `.travis.yml` is example Golang setup)
@@ -57,7 +35,36 @@ Follow steps below to setup your own Tweetcode.
    1. Set `TWITTER_CONSUMER_KEY`, `TWITTER_CONSUMER_SECRET`, `TWITTER_ACCESS_TOKEN` and `TWITTER_ACCESS_SECRET` environment variables
       (e.g. `travis env set TWITTER_CONSUMER_KEY my-twitter-consumer-key`)
 
-After that follow *Contribution flow* described above.
+> After that consider making PR to https://github.com/Tweetcode/tweetcode (this repo)
+> with links to your Tweetcode in *Existing "Tweetcodes"* section of this README.
+
+Now you can proceed to *Contribution Flow* and "push" some tweets!
+
+## Contribution Flow
+
+Follow steps below to "push" some code snippets to Twitter.
+
+### Setup local repo (fist time only)
+
+1. Fork this repo and clone it (or just clone it if you're owner)
+2. Run `git config --local include.path ../.gitconfig`
+
+### Add your snippet
+
+1. Create a new branch based on master
+2. Create new file with code snippet in `snippets` directory:
+   1. Give it meaningful name
+   2. Make sure it's `UTF-8`-encoded file
+3. Commit your changes
+   1. Commit message must follow specific format (template provided)
+4. Run `make` to preview generated tweet
+   1. If there is no errors it'll print generated tweet text and name of
+      generated image
+4. Push your changes
+6. Open Pull Request
+   1. In case of failed CI build - fix locally, squash and push again
+7. After PR is being merged to master, new snippet will be automatically
+   published to twitter
 
 ## License
 
